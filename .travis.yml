@@ -3,7 +3,5 @@ services:
   - docker
 
 before_install:
-  - 'sudo gem update --system --conservative || (gem i "rubygems-update:~>2.7" --no-document && update_rubygems)'
-  - 'sudo gem update bundler --conservative'
   - docker build -t mailjky/docker-react -f Dockerfile.dev .
   - docker run mailjky/docker-react npm run test -- --coverage
