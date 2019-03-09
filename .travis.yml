@@ -3,5 +3,8 @@ services:
   - docker
 
 before_install:
+  - echo "BEFORE INSTALL START"
+  - gem install bundler
+  - echo "BEFORE INSTALL END"
   - docker build -t mailjky/docker-react -f Dockerfile.dev .
   - docker run mailjky/docker-react npm run test -- --coverage
